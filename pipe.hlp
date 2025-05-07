@@ -1,0 +1,60 @@
+PIPE.REX "stage 1 | stage 2 | ..."
+
+< fn   read from file fn
+< fn   output to file fn
+
+CONSole  read from console (if first stage)
+         output to console
+
+LITeral data enter data into stage
+
+STRIP   remove leading and trailing blanks in stage
+
+TAKE n  if n>0 then take first n lines from stage into new stage
+        if n<0 then take last n lines from stage into new stage
+
+DROP n  if n>0 then drop first n lines
+        if n<0 then drop last n lines
+
+COUNT
+   COUNT Bytes
+   COUNT Words
+   COUNT Lines
+   COUNT MIN
+   COUNT MAX
+
+$CALC calculate
+   $CALC SUM
+   $CALC AVG
+   $CALC MIN
+   $CALC MAX
+
+SORT
+   wN   - sort by word n
+   wN . - sort by word n using "." as delimiter instead of space
+   N      sort by column N
+   a-b    sort using substring of columns a to b
+
+-- comment
+
+COMMAND send command to operating system with address command
+
+SYSTEM send command to operating system with address system
+
+SPLIT  seperate words
+
+JOIN   join words
+
+VAR    set variable in calling REXX function
+
+STEM   set stem variable in calling REXX function
+
+$SAVE name  save current stage into "name"
+
+$GET  name  fetch stored stage "name" into current stage
+
+$FINDIN - find key in another stage
+
+LOCATE /x/
+
+NLOCATE /x/
