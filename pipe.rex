@@ -157,6 +157,7 @@ select
    when left(cmd,1)="<" then do
       parse var cmd "<" file "(" parms
       file=strip(file)
+      sepchar=""
       if parms<>"" then parse var parms "SEP" sepchar .
       if datatype(sepchar)="NUM" then sepchar=d2c(sepchar)
 
